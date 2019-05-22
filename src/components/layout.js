@@ -8,8 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import { Frame } from "framer"
 
 import Header from "./header"
+import Slider from "./Slider"
 import "./layout.css"
 
 const Layout = ({ children }) => (
@@ -26,6 +28,15 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
+        <Frame
+          name={"SliderApp"}
+          width={"100%"}
+          height={"100%"}
+          background={"#242424"}
+        >
+          <Slider />
+        </Frame>
+
         <div
           style={{
             margin: `0 auto`,
