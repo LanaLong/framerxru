@@ -34,6 +34,13 @@ const Layout = ({ children }) => (
           height={"100%"}
           background={"#242424"}
         >
+          <Frame
+            name={"Image"}
+            scale={0.25}
+            center
+            size={480}
+            image={"https://static.framer.com/api/bg.jpg"}
+          />
           <Slider />
         </Frame>
 

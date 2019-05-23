@@ -1,7 +1,8 @@
 import * as React from "react"
-import { Frame } from "framer"
+import { Frame, useMotionValue } from "framer"
 
 export default function Slider() {
+  const position = useMotionValue(0)
   return (
     <Frame
       name={"Rail"}
@@ -17,6 +18,7 @@ export default function Slider() {
         height={6}
         radius={3}
         background={"#fff"}
+        width={position}
       />
 
       <Frame
@@ -27,6 +29,11 @@ export default function Slider() {
         background={"#fff"}
         shadow={"0 2px 8px 1px #242424"}
         left={-20}
+        drag={"x"}
+        dragConstraints={{ left: 0, right: 130 }}
+        dragElastic={0}
+        dragMomentum={false}
+        x={position}
       />
     </Frame>
   )
