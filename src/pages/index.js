@@ -1,20 +1,30 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Frame } from "framer"
 
 import Layout from "../components/layout"
-// import Image from "../components/image"
 import SEO from "../components/seo"
+import Slider from "../components/slider"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>First page</h1>
-    {/* <p>Welcome to Framer X ru site.</p> */}
-
-    {/* <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div> */}
-    <Link to="/page-2/">Second page</Link>
+    <Frame
+      name={"SliderApp"}
+      min-width={"320px"}
+      min-height={"320px"}
+      background={"#242424"}
+    >
+      <Frame
+        name={"Image"}
+        scale={0.25}
+        center
+        size={480}
+        image={"https://static.framer.com/api/bg.jpg"}
+      />
+      <Slider />
+    </Frame>
+    <Link to="/page-2/">Second page uuuuuuuuuuuuuuuuuuuuuuuuuu</Link>
   </Layout>
 )
 
