@@ -1,8 +1,9 @@
 import * as React from "react"
-import { Frame, useMotionValue } from "framer"
+import { Frame, useMotionValue, useTransform } from "framer"
 
-export default function Slider() {
-  const position = useMotionValue(0)
+export function Slider({ min = 0, max = 1, value = 0, onChange }) {
+  const position = useMotionValue(value * 130)
+  const newValue = useTransform(position, [0, 130], [min, max])
   return (
     <Frame
       name={"Rail"}
@@ -14,15 +15,15 @@ export default function Slider() {
     >
       <Frame
         name={"Fill"}
-        // width={65}
+        width={position}
         height={6}
         radius={3}
         background={"#fff"}
-        width={position}
       />
 
       <Frame
         name={"Knob"}
+        x={position}
         size={40}
         center={"y"}
         radius={"50%"}
@@ -33,7 +34,9 @@ export default function Slider() {
         dragConstraints={{ left: 0, right: 130 }}
         dragElastic={0}
         dragMomentum={false}
-        x={position}
+        onDrag={function() {
+          if (onChange) onChange(newValue.get())
+        }}
       />
     </Frame>
   )
