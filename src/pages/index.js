@@ -16,3 +16,20 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+// {
+//     allContentfulPost {
+//         edges {
+//             node {
+//                 title
+//                 author
+//                 date
+//                 private
+//                 text {
+//                     id
+//                     text
+
+//                 }
+//             }
+//         }
+//     }
+// }
