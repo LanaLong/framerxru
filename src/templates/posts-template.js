@@ -75,15 +75,15 @@ export const query = graphql`
           fields {
             slug
           }
+
           id
           frontmatter {
             title
-            date
+            date(formatString: "D MMMM YYYY", locale: "ru")
           }
-          excerpt
+          excerpt(pruneLength: 200, truncate: true)
         }
       }
     }
   }
 `
-// sort: { order: DESC; fields: [frontmatter___date] }
