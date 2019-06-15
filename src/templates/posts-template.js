@@ -8,7 +8,7 @@ export default ({ data, pageContext }) => {
   const { currentPage, isFirstPage, isLastPage, totalPages } = pageContext
   const nextPage = `/posts/${String(currentPage + 1)}`
   const prevPage =
-    currentPage - 1 === 1 ? "/posts" : `/blog/${String(currentPage - 1)}`
+    currentPage - 1 === 1 ? "/posts" : `/posts/${String(currentPage - 1)}`
   return (
     <Layout>
       <div>
@@ -31,7 +31,15 @@ export default ({ data, pageContext }) => {
       ))}
 
       {/* Pagination Links */}
-      <div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-around",
+          maxWidth: 500,
+          margin: "0, auto",
+        }}
+      >
         {!isFirstPage && (
           <Link to={prevPage} rel="prev">
             Prev Page
@@ -56,7 +64,11 @@ export default ({ data, pageContext }) => {
 
 export const query = graphql`
   query($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(skip: $skip, limit: $limit) {
+    allMarkdownRemark(
+      skip: $skip
+      limit: $limit
+      sort: { fields: [frontmatter___date], order: ASC }
+    ) {
       totalCount
       edges {
         node {
@@ -74,3 +86,4 @@ export const query = graphql`
     }
   }
 `
+// sort: { order: DESC; fields: [frontmatter___date] }
