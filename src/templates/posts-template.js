@@ -75,7 +75,7 @@ export const query = graphql`
           fields {
             slug
           }
-
+          timeToRead
           id
           frontmatter {
             title
