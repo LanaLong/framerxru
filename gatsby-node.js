@@ -8,6 +8,7 @@ const path = require("path")
 const { createFilePath } = require("gatsby-source-filesystem")
 
 const PostTemplate = path.resolve("./src/templates/post-template.js")
+const BlogTemplate = path.resolve("./src/templates/posts-template.js")
 
 // **018 Programmatically Creating Slugs for Blog Posts with gatsby-node**
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -54,4 +55,24 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+    posts.forEach((_, index, postsArr) => {
+        const totalPages = postsArr.length
+        const postsPerPage = 1
+        const currentpage = index + 1
+        const isFirstPage = index === 0
+        const isLastPage = currentPage === totalPages
+
+        createPage({
+            path: isFirstPage ? '/posts' : `/posts/${currentPage}`,
+            component: BlogTemplate,
+            context : {
+                limit: postsPerPage,
+                skip: index * postsPerPage,
+                isFirstPage,
+                isLastPage,
+                currentPage,
+                totalPages
+            }
+        })
 }
