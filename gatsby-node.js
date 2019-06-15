@@ -56,23 +56,24 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-    posts.forEach((_, index, postsArr) => {
-        const totalPages = postsArr.length
-        const postsPerPage = 1
-        const currentpage = index + 1
-        const isFirstPage = index === 0
-        const isLastPage = currentPage === totalPages
+  posts.forEach((_, index, postsArr) => {
+    const totalPages = postsArr.length
+    const postsPerPage = 1
+    const currentPage = index + 1
+    const isFirstPage = index === 0
+    const isLastPage = currentPage === totalPages
 
-        createPage({
-            path: isFirstPage ? '/posts' : `/posts/${currentPage}`,
-            component: BlogTemplate,
-            context : {
-                limit: postsPerPage,
-                skip: index * postsPerPage,
-                isFirstPage,
-                isLastPage,
-                currentPage,
-                totalPages
-            }
-        })
+    createPage({
+      path: isFirstPage ? "/posts" : `/posts/${currentPage}`,
+      component: BlogTemplate,
+      context: {
+        limit: postsPerPage,
+        skip: index * postsPerPage,
+        isFirstPage,
+        isLastPage,
+        currentPage,
+        totalPages,
+      },
+    })
+  })
 }
