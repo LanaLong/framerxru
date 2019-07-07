@@ -7,8 +7,9 @@ if (process.env.NODE_ENV !== "production") {
 module.exports = {
   siteMetadata: {
     title: `QM :: Experience`,
-    description: `QM :: Experience point`,
+    description: `QM :: Experience project`,
     author: `@lanlong`,
+    createAt: `2019`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
