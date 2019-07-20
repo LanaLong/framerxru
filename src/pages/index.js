@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, StaticQuery, Link } from "gatsby"
-// import { Frame } from "framer"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -71,20 +71,3 @@ const IndexPage = () => (
 )
 
 export default IndexPage
-// {
-//     allContentfulPost {
-//         edges {
-//             node {
-//                 title
-//                 author
-//                 date
-//                 private
-//                 text {
-//                     id
-//                     text
-
-//                 }
-//             }
-//         }
-//     }
-// }

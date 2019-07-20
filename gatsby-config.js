@@ -11,6 +11,7 @@ module.exports = {
     author: `@lanlong`,
     createAt: `2019`,
   },
+  plugins: [`gatsby-plugin-styled-components`],
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
