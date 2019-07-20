@@ -11,6 +11,15 @@ module.exports = {
     author: `@lanlong`,
     createAt: `2019`,
   },
+  plugins: [
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+  ],
+
   plugins: [`gatsby-plugin-styled-components`],
   plugins: [
     `gatsby-plugin-react-helmet`,
