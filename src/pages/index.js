@@ -28,15 +28,25 @@ import SEO from "../components/seo"
 // `
 
 const Container = styled.div`
-  display: flex;
+  ${"" /* max-width: 800px; */}
+  ${"" /* margin: auto; */}
+  ${"" /* display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  height: 50vh;
-  width: 50vw;
+  align-items: center; */}
+  ${"" /* justify-items: center; */}
+  ${"" /* vertical-align: middle; */}
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -80%);
+
+  ${"" /* height: 50vh;
+  width: 50vw; */}
   background-color: rgba(46, 253, 25, 0.3);
   ${"" /* background-color: green; */}
-  margin: 15vh 15vw;
+  ${"" /* margin: 15vh 15vw; */}
+  text-align: center;
 `
 const Title = styled.h1`
   margin: 0 auto;
