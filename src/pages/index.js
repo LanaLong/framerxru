@@ -3,7 +3,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-// import Layout from "../components/layout"
+import Logo from "../images/logo-qm.svg"
 import SEO from "../components/seo"
 
 // const getMarckdownPosts = graphql`
@@ -28,24 +28,10 @@ import SEO from "../components/seo"
 // `
 
 const Container = styled.div`
-  ${"" /* max-width: 800px; */}
-  ${"" /* margin: auto; */}
-  ${"" /* display: flex;
-  flex-direction: column;
-  align-items: center; */}
-  ${"" /* justify-items: center; */}
-  ${"" /* vertical-align: middle; */}
   position: fixed;
   top: 50%;
   left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -80%);
-
-  ${"" /* height: 50vh;
-  width: 50vw; */}
   background-color: rgba(46, 253, 25, 0.3);
-  ${"" /* background-color: green; */}
-  ${"" /* margin: 15vh 15vw; */}
   text-align: center;
 `
 const Title = styled.h1`
@@ -58,7 +44,17 @@ const IndexPage = () => (
   <>
     <SEO title="QM::Experience" />
     <Container>
-      <span>QM</span>
+      <span>
+        <img
+          src={Logo}
+          alt="QM::Experience"
+          style={{
+            width: "50 px",
+            border: "3px solid grey",
+          }}
+        />
+        QM
+      </span>
       <Title>
         Наблюдение
         <br /> за <span>временем</span>
