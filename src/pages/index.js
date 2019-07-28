@@ -5,6 +5,8 @@ import styled from "styled-components"
 
 import Logo from "../images/logo-qm.png"
 import SEO from "../components/seo"
+// import Img from "gatsby-image"
+import LogoQm from "../components/logoQm"
 
 const Container = styled.div`
   position: fixed;
@@ -31,6 +33,7 @@ const IndexPage = () => (
   <>
     <SEO title="QM::Experience" />
     <Container>
+      <LogoQm />
       <LogoBlock src={Logo} alt="QM::Experience" />
       <Subscription>QM::Experience</Subscription>
       <Title>
