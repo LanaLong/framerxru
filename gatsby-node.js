@@ -8,7 +8,7 @@ const path = require("path")
 const { createFilePath } = require("gatsby-source-filesystem")
 
 const PostTemplate = path.resolve("./src/templates/post-template.js")
-// const BlogTemplate = path.resolve("./src/templates/posts-template.js")
+const BlogTemplate = path.resolve("./src/templates/posts-template.js")
 
 // **018 Programmatically Creating Slugs for Blog Posts with gatsby-node**
 exports.onCreateNode = ({ node, getNode, actions }) => {
