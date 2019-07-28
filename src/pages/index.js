@@ -6,32 +6,16 @@ import styled from "styled-components"
 import Logo from "../images/logo-qm.svg"
 import SEO from "../components/seo"
 
-// const getMarckdownPosts = graphql`
-//   {
-//     allMarkdownRemark {
-//       totalCount
-//       edges {
-//         node {
-//           fields {
-//             slug
-//           }
-//           id
-//           frontmatter {
-//             title
-//             date
-//           }
-//           excerpt
-//         }
-//       }
-//     }
-//   }
-// `
-
 const Container = styled.div`
+  ${"" /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */}
   position: fixed;
   top: 50%;
   left: 50%;
-  background-color: rgba(46, 253, 25, 0.3);
+  transform: translate(-50%, -50%);
+  ${"" /* background-color: rgba(46, 253, 25, 0.3); */}
   text-align: center;
 `
 const Title = styled.h1`
