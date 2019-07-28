@@ -3,14 +3,10 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import Logo from "../images/logo-qm.svg"
+import Logo from "../images/logo-qm.png"
 import SEO from "../components/seo"
 
 const Container = styled.div`
-  ${"" /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */}
   position: fixed;
   top: 50%;
   left: 50%;
@@ -19,30 +15,31 @@ const Container = styled.div`
   text-align: center;
 `
 const Title = styled.h1`
-  margin: 0 auto;
-  text-align: center;
+  ${"" /* margin: 0 auto;
+  text-align: center; */}
 `
+
+const LogoBlock = styled.img`
+  display: block;
+  margin: 0 auto;
+`
+
+const Subscription = styled.span``
 
 const IndexPage = () => (
   //   <Layout>
   <>
     <SEO title="QM::Experience" />
     <Container>
-      <span>
-        <img
-          src={Logo}
-          alt="QM::Experience"
-          style={{
-            width: "50 px",
-            border: "3px solid grey",
-          }}
-        />
-        QM
-      </span>
+      <LogoBlock src={Logo} alt="QM::Experience" />
+      <Subscription>QM::Experience</Subscription>
       <Title>
         Наблюдение
-        <br /> за <span>временем</span>
+        <br />
+        за
+        <span> временем</span>
       </Title>
+
       <span>Date</span>
       <p>Quote</p>
       <h5>
